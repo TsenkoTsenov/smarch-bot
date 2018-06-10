@@ -29,7 +29,7 @@ rtm.on('message', (event) => {
             weeklyTasksCron.destroy();
         }
 
-        weeklyTasksCron = cron.schedule('* 9 * * *', function(){
+        weeklyTasksCron = cron.schedule('*/2 * * * *', function(){
             rtm.sendMessage('Good morning <!channel>! \n You can see our weekly tasks here: ' + weeklyTasksUrl, channel)
                 .then((res) => {
                     console.log('Weekly tasks message sent: ', res.ts);
