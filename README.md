@@ -1,1 +1,1 @@
-# smarch-bot
+# SmarchBot v.0.0.1

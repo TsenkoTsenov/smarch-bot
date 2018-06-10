@@ -1,0 +1,13 @@
+{
+  "name": "smarch-bot",
+  "version": "0.0.1",
+  "description": "Custom build bot for Smarch Studio slack.",
+  "main": "index.js",
+  "author": "Tsenko Tsenov",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^4.3.1",
+    "dotenv": "^6.0.0",
+    "node-cron": "^1.2.1"
+  }
+}
