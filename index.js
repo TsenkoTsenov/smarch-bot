@@ -2,7 +2,7 @@ const { RTMClient } = require('@slack/client');
 const cron = require('node-cron');
 require('dotenv').config();
 
-const token = process.env.BOT_TOKEN;
+const token = process.env.BOT_USER_OAUTH_ACCESS_TOKEN;
 const channel = process.env.CHANNEL;
 
 const rtm = new RTMClient(token);
