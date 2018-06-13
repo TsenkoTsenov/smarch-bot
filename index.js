@@ -29,7 +29,8 @@ rtm.on('message', (event) => {
             weeklyTasksCron.destroy();
         }
 
-        weeklyTasksCron = cron.schedule('* 9 * * *', function(){
+        //TODO: Improve cron - currently server runs with one hour back, so it has to be 1 hour back here too.
+        weeklyTasksCron = cron.schedule('* 8 * * *', function(){
             rtm.sendMessage('Good morning <!channel>! \n You can see our weekly tasks here: ' + weeklyTasksUrl, channel)
                 .then((res) => {
                     console.log('Weekly tasks message sent: ', res.ts);
@@ -39,11 +40,4 @@ rtm.on('message', (event) => {
 
         rtm.sendMessage('Weekly tasks url updated with: ' + weeklyTasksUrl, channel);
     };
-
-    //Humour. Ha. Ha.
-    if(event.channel == 'DB493MPC3') {
-        if(/hi|hello/.test(message)) {
-            rtm.sendMessage('https://files.slack.com/files-pri/T7Z9GKD29-FB4U6HF2S/img_20180607_192917_622.jpg', 'DB493MPC3');
-        }
-    }
 });
