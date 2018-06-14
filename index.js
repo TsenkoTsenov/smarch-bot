@@ -30,8 +30,8 @@ rtm.on('message', (event) => {
         }
 
         //TODO: Improve cron - currently server runs with one hour back, so it has to be 1 hour back here too.
-        weeklyTasksCron = cron.schedule('* 8 * * *', function(){
-            rtm.sendMessage('Good morning <!channel>! \n You can see our weekly tasks here: ' + weeklyTasksUrl, channel)
+        weeklyTasksCron = cron.schedule('0 8 * * *', function(){
+            rtm.sendMessage('Good morning <!channel>! \n You can see the status of our weekly tasks here: ' + weeklyTasksUrl, channel)
                 .then((res) => {
                     console.log('Weekly tasks message sent: ', res.ts);
                 })
